@@ -1,8 +1,23 @@
+/* CSS reset */
+/* ref: https://code.tutsplus.com/tutorials/quick-tip-create-your-own-simple-resetcss-file--net-206 */
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td
+{
+margin: 0; padding: 0; border: 0; outline: none;
+}
+
+/* Express Default */
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  /*color: #00B7FF;*/
+  color: #9500ff;
+}
+
+/* Application */
+ul{
+	list-style-type: none;
 }
