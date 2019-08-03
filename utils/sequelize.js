@@ -22,6 +22,10 @@ const sequelize = new Sequelize( database, username, password, {
 		idle: 10000
 	} 
 });
+//
+
+const { userModel } = require('../models/user.model');
+const UserModel = userModel(sequelize,Sequelize);
 
 /*
 // Test the connection
@@ -37,18 +41,62 @@ sequelize
 */
 
 //
-function checkConnection(){
+function connCheck(){
 	sequelize
 		.authenticate()
 		.then(()=>{
-			console.log('Sequelize:SUCCESS','Connection has been established successfully.');
+			console.log('======================================================');
+			console.log('Sequelize:SUCCESS');
+			console.log('Connection has been established successfully.');
+			console.log('======================================================');
 		})
 		.catch( error=>{
-			console.log('Sequelize:ERROR','Unable to connect to the database',error);
+			console.log('======================================================');
+			console.log('Sequelize:ERROR. Unable to connect to the database');
+			console.log(error);
+			console.log('======================================================');
 		});	
 }
+function createTables(){
+	//var UserModel = userModel(sequelize,Sequelize);
+
+	sequelize.sync({force:true}).then(function(){
+		console.log('SUCCESS:createTables');
+	}).catch(function(error){
+		console.log('ERROR:createTables');
+		console.log(error);
+	});
+}
 //
-module.exports = {checkConnection}
+function connClose(){
+	sequelize.close();
+}
+//
+function getUserModel(){
+	var UserModel = userModel(sequelize,Sequelize);
+	//
+	//
+	// Sync all models that aren't already in the database
+	// sequelize.sync()
+	//
+	UserModel.sync({force:false}).then(function(){
+		console.log('UserModel Sync Done!');
+	}).catch(function(error){
+		console.log('ERROR');
+		console.log(error)
+	});
+
+	console.log(UserModel);
+	return UserModel;
+}
+ 
+//
+module.exports = { 
+					connCheck, 
+					connClose, 
+					createTables,
+					getUserModel
+				};
 
 
 

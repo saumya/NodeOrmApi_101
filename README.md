@@ -18,3 +18,6 @@ npx express-generator --view=pug myNewApp
 ```
 npm install --save sequelize
 npm install --save mysql2
+```
+
+### Details

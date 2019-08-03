@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // dependencies
-const { checkConnection } = require('../utils/sequelize')
+const { connCheck, createTables, getUserModel } = require('../utils/sequelize')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,8 +10,11 @@ router.get('/', function(req, res, next) {
 });
 //
 router.get('/ormCheck',function(request,response,next){
-	const result = checkConnection();
-	response.send(result);
+	//const result = connCheck();
+	//const result = getUserModel();
+	createTables();
+	//response.send(result);
+	response.send('Checked');
 });
 //
 module.exports = router;
