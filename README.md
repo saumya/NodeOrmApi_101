@@ -24,6 +24,8 @@ npm install --save mysql2
 
 
 ### Learnings
+ 
+ 1. [Reference Reading][1]
 
 #### Sequelize.sync
 
@@ -36,3 +38,7 @@ It constantly threw me the error `TypeError: this.model.bulkBuild is not a funct
 
  - It was just because I had a `type error`, instead of `modelName` I was typing 'model'.
  - Then there must be a `return` from the `model`, which in some models I was missing.
+
+
+
+[ref_1]: https://www.codementor.io/mirko0/how-to-use-sequelize-with-node-and-express-i24l67cuz
