@@ -25,7 +25,7 @@ npm install --save mysql2
 
 ### Learnings
  
- 1. [Reference Reading][1]
+ 1. [Reference Reading][ref_1]
 
 #### Sequelize.sync
 
