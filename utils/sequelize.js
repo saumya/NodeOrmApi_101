@@ -61,7 +61,8 @@ function connCheck(){
 		});	
 }
 function createTables(){
-	//var UserModel = userModel(sequelize,Sequelize);
+	// Sync all models that aren't already in the database
+	// sequelize.sync()
 
 	sequelize.sync({force:true}).then(function(){
 		console.log('SUCCESS:createTables');
@@ -77,10 +78,6 @@ function connClose(){
 //
 function getUserModel(){
 	//var UserModel = userModel(sequelize,Sequelize);
-	//
-	//
-	// Sync all models that aren't already in the database
-	// sequelize.sync()
 	//
 	UserModel.sync({force:false}).then(function(){
 		console.log('UserModel Sync Done!');
