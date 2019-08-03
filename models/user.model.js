@@ -22,7 +22,7 @@ module.exports = (sequelize,type)=>{
 var userModel = function(sequelize,Sequelize){
 	const Model = Sequelize.Model;
 
-	class User extends Model{};
+	class User extends Model{}
 	User.init({
 		id:{
 			type: Sequelize.INTEGER,

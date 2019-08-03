@@ -3,9 +3,9 @@
 
 module.exports = (sequelize,Sequelize)=>{
 	
-	const Model = Sequelize.model;
+	const Model = Sequelize.Model;
 	
-	class Blog extends model{};
+	class Blog extends Model{}
 	
 	Blog.init({
 		id:{

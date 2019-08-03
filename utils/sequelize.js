@@ -29,6 +29,9 @@ const userModel  = require('../models/user.model');
 const UserModel = userModel(sequelize,Sequelize);
 */
 const UserModel = require('../models/user.model')(sequelize,Sequelize);
+const BlogModel = require('../models/blog.model')(sequelize,Sequelize);
+const ClientModel = require('../models/client.model')(sequelize,Sequelize);
+const ProjectModel = require('../models/project.model')(sequelize,Sequelize);
 
 /*
 // Test the connection
@@ -61,9 +64,26 @@ function connCheck(){
 		});	
 }
 function createTables(){
+	//
+	
+	/*
+	UserModel.sync();
+	BlogModel.sync();
+	ClientModel.sync();
+	ProjectModel.sync();
+	*/
+	/*
+	ProjectModel.sync({force:true}).then(()=>{console.log('===SUCCESS===')}).catch((error)=>{
+		console.log('ERROR');
+		console.log('======================================================');
+		console.log(error);
+		console.log('======================================================');
+	});
+	*/
+
 	// Sync all models that aren't already in the database
 	// sequelize.sync()
-
+	
 	sequelize.sync({force:true}).then(function(){
 		console.log('======================================================');
 		console.log('SUCCESS:createTables');
@@ -74,6 +94,7 @@ function createTables(){
 		console.log(error);
 		console.log('======================================================');
 	});
+	
 }
 //
 function connClose(){
