@@ -6,8 +6,9 @@ block content
    strong collection of APIs 
    to be consumed for the Office Management Application.
   
-  div(id='api_get')
-   h3 GET
+  //- Application installation 
+  div(id='app_prepare')
+   h3 Application 
    ul
     li 
      a(href='ormCheck') Check ORM connection
@@ -34,13 +35,27 @@ block content
   //
 
 
-  div(id='api_post')
+  //-div(id='api_get')
+   h3 GET
+   ul
+    li 
+     a(href='users/') All Users
+  //
+
+  
+  //-div(id='api_post')
    h3 POST
    ul
     li 
      a(href='project/') New Project
     li
      a(href='client/') New Client
+  //
+
+  div
+   h3  +========= The End ==========
+  
+
 
 
 

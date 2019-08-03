@@ -65,10 +65,14 @@ function createTables(){
 	// sequelize.sync()
 
 	sequelize.sync({force:true}).then(function(){
+		console.log('======================================================');
 		console.log('SUCCESS:createTables');
+		console.log('======================================================');
 	}).catch(function(error){
+		console.log('======================================================');
 		console.log('ERROR:createTables');
 		console.log(error);
+		console.log('======================================================');
 	});
 }
 //
