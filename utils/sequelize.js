@@ -24,8 +24,11 @@ const sequelize = new Sequelize( database, username, password, {
 });
 //
 
-const { userModel } = require('../models/user.model');
+/*
+const userModel  = require('../models/user.model');
 const UserModel = userModel(sequelize,Sequelize);
+*/
+const UserModel = require('../models/user.model')(sequelize,Sequelize);
 
 /*
 // Test the connection
@@ -73,7 +76,7 @@ function connClose(){
 }
 //
 function getUserModel(){
-	var UserModel = userModel(sequelize,Sequelize);
+	//var UserModel = userModel(sequelize,Sequelize);
 	//
 	//
 	// Sync all models that aren't already in the database

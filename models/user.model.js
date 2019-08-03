@@ -46,4 +46,4 @@ var userModel = function(sequelize,Sequelize){
 	return User;
 };
 
-module.exports = {userModel};
+module.exports = userModel;
